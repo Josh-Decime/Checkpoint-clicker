@@ -7,6 +7,13 @@ let clickUpgrades = [
         quantity: 0,
         multiplier: 1,
         unlocked: false
+    },
+    {
+        name: 'Soul Net',
+        price: 10,
+        quantity: 0,
+        multiplier: 5,
+        unlocked: false
     }
 ]
 
@@ -21,6 +28,17 @@ let automaticUpgrades = [
 ]
 
 let souls = 0
+
+function clickValue() {
+    let clickPower = 1
+    // we want to increase clickPower by the multiplier * quantity forEach clickUpgrades name
+    clickUpgrades.forEach(upgradePower => {
+        upgradePower.quantity * upgradePower.multiplier
+        clickPower += upgradePower
+        console.log('click Power:', clickPower)
+        console.log('upgrade power', upgradePower)
+    })
+}
 
 function mine() {
 
@@ -41,8 +59,10 @@ function buyClickUpgrade(upgradeName) {
     if (souls >= upgrade.price) {
         console.log('purchased')
         souls -= upgrade.price
-        // quantity++
-        // console.log(upgrade.quantity)
+        console.log('new souls count:', souls)
+        upgrade.quantity++
+        console.log('power-up count:', upgrade.quantity)
 
+        update()
     }
 }
