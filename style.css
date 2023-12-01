@@ -1,0 +1,16 @@
+.lavender-background {
+    background-color: #6c5885;
+}
+
+.offWhite-bg {
+    background-color: #d4d1ba;
+    color: #1d0f26;
+    border: #1d0f26;
+    border-width: 5px;
+}
+
+.soul-img-style {
+    height: 75vh;
+    width: 75vh;
+    border-radius: 50%;
+}
