@@ -22,21 +22,21 @@
             </section>
         </section>
 
+        <section class="row">
+            <section class="d-flex justify-content-center">
+                <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
+            </section>
+        </section>
     </header>
 
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <section class="row">
                 <section class="d-flex justify-content-center">
                     <img onclick="mine()" class="workshop-img-style" src="Toy-Workshop.png" alt="Toy Workshop">
                 </section>
             </section>
 
-            <section class="row">
-                <section class="d-flex justify-content-center">
-                    <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
-                </section>
-            </section>
 
             <section class="row">
                 <section class="col-12">
@@ -44,8 +44,16 @@
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3>Click Upgrades</h3>
-                                    <button class="btn btn-danger" onclick="buyClickUpgrade('Tools')">Tools</button>
+                                    <h3 class="mb-2">Click Upgrades</h3>
+                                    <div class="d-flex">
+                                        <button class="btn btn-danger" onclick="buyClickUpgrade('Tools')"
+                                            id="Upgrade Price">5</button>
+                                        <div class="ms-1">
+                                            <p>Tools</p>
+                                            <p>+1</p>
+                                        </div>
+                                    </div>
+
                                     <button class="btn btn-danger"
                                         onclick="buyClickUpgrade('Workbench')">Workbench</button>
                                 </div>

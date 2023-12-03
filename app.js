@@ -6,14 +6,14 @@ let clickUpgrades = [
         price: 5,
         quantity: 0,
         multiplier: 1,
-        unlocked: false
+        unlocked: false,
     },
     {
         name: 'Workbench',
         price: 20,
         quantity: 0,
         multiplier: 5,
-        unlocked: false
+        unlocked: false,
     },
 
 ]
@@ -24,19 +24,20 @@ let automaticUpgrades = [
         price: 100,
         quantity: 0,
         multiplier: 1,
-        unlocked: false
+        unlocked: false,
     },
     {
         name: 'Papa Elf',
         price: 250,
         quantity: 0,
         multiplier: 3,
-        unlocked: false
+        unlocked: false,
     },
 ]
 
 let presents = 0
 let clickPower = 1
+let toolsPrice = 0
 
 
 function mine() {
@@ -51,6 +52,20 @@ function updatePresents() {
     giftElm.innerHTML = presents.toString()
 }
 
+// would update all prices, i need a for each loop
+// function updateUpgradePrice() {
+//     let upgradeElm = document.getElementById('Upgrade Price')
+//     upgradeElm.innerHTML = upgradeNewPrice.toString()
+// }
+
+// from our examples I don't see any way to update the price of each upgrade with one function.. but I do know how to do it individually, so I will just do that then
+// function updateUpgradesPrice() {
+//     clickUpgrades.forEach(upgrade => {
+//         let updateElm = document.getElementById(upgrade.price)
+//         console.log('update elm', updateElm)
+//     })
+// }
+
 function buyClickUpgrade(upgradeName) {
     let upgrade = clickUpgrades.find(item => item.name == upgradeName)
     console.log(upgradeName, '|', upgrade)
@@ -63,8 +78,12 @@ function buyClickUpgrade(upgradeName) {
         // console.log(upgrade, 'upgrade we are purchasing')
         clickPower += upgrade.multiplier
         // console.log(clickPower, 'clickPower')
+        upgrade.price = Math.round(upgrade.price * 1.5)
+        upgradeNewPrice = upgrade.price
+        console.log('upgrade price:', upgrade)
 
         updatePresents()
+        // updateUpgradePrice()
     }
 }
 
