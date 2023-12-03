@@ -22,11 +22,6 @@
             </section>
         </section>
 
-        <section class="row">
-            <section class="d-flex justify-content-center">
-                <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
-            </section>
-        </section>
     </header>
 
     <main>
@@ -37,16 +32,21 @@
                 </section>
             </section>
 
-
             <section class="row">
+                <section class="d-flex justify-content-center">
+                    <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
+                </section>
+            </section>
+
+            <section class="row christmas-style mx-2">
                 <section class="col-12">
                     <section class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12 col-md-6">
                                     <h3 class="mb-2">Click Upgrades</h3>
                                     <div class="d-flex">
-                                        <button class="btn btn-danger" onclick="buyClickUpgrade('Tools')"
+                                        <button class="christmas-buttons mx-2" onclick="buyClickUpgrade('Tools')"
                                             id="Upgrade Price">5</button>
                                         <div class="ms-1">
                                             <p>Tools</p>
@@ -54,15 +54,21 @@
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-danger"
-                                        onclick="buyClickUpgrade('Workbench')">Workbench</button>
+                                    <div class="d-flex">
+                                        <button class="christmas-buttons mx-2"
+                                            onclick="buyClickUpgrade('Workbench')">Workbench</button>
+                                        <div class="ms-1">
+                                            <p>Workbench</p>
+                                            <p>+1</p>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-12 col-md-6">
                                     <h3>Auto Upgrades</h3>
-                                    <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Young Elf')">Young
+                                    <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Young Elf')">Young
                                         Elf</button>
-                                    <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Papa Elf')">Papa
+                                    <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Papa Elf')">Papa
                                         Elf</button>
                                 </div>
 
@@ -70,13 +76,13 @@
 
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12 col-md-6">
                                     <h3>click stats</h3>
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-12 col-md-6">
                                     <h3>Auto stats</h3>
                                 </div>
 
