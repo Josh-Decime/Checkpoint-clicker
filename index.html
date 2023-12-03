@@ -13,30 +13,75 @@
     <title>Document</title>
 </head>
 
-<body class="container-fluid lavender-background">
-    <header class="row">
-        <section class="col-12 ">
-            <h3 class="text-center offWhite-bg">Soul Reaper</h3>
+<body class="snowy-background debug">
+
+    <header class="container-fluid">
+        <section class="row">
+            <section class="col-12 ">
+                <h3 class="text-center christmas-style">Save Christmas</h3>
+            </section>
         </section>
+
     </header>
 
-    <main class="row">
-        <section class="d-flex justify-content-center">
-            <img onclick="mine()" class="soul-img-style" src="soul-torrent.png" alt="Soul Torrent">
-        </section>
-        <section>
-            <p>Your Souls: <span id="souls">0</span> </p>
-        </section>
+    <main>
+        <div class="container-fluid">
+            <section class="row">
+                <section class="d-flex justify-content-center">
+                    <img onclick="mine()" class="workshop-img-style" src="Toy-Workshop.png" alt="Toy Workshop">
+                </section>
+            </section>
 
-        <section>
-            <button class="btn btn-danger" onclick="buyClickUpgrade('Scythe')">Scythe</button>
-            <button class="btn btn-danger" onclick="buyClickUpgrade('Soul Net')">Soul Net</button>
-        </section>
+            <section class="row">
+                <section class="d-flex justify-content-center">
+                    <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
+                </section>
+            </section>
 
-        <section>
-            <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Reaper')">Scythe</button>
-            <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Soul Sucker')">Soul Net</button>
-        </section>
+            <section class="row">
+                <section class="col-12">
+                    <section class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Click Upgrades</h3>
+                                    <button class="btn btn-danger" onclick="buyClickUpgrade('Tools')">Tools</button>
+                                    <button class="btn btn-danger"
+                                        onclick="buyClickUpgrade('Workbench')">Workbench</button>
+                                </div>
+
+                                <div class="col-6">
+                                    <h3>Auto Upgrades</h3>
+                                    <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Young Elf')">Young
+                                        Elf</button>
+                                    <button class="btn btn-dark" onclick="buyAutomaticUpgrades('Papa Elf')">Papa
+                                        Elf</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>click stats</h3>
+                                </div>
+
+                                <div class="col-6">
+                                    <h3>Auto stats</h3>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </section>
+                </section>
+
+            </section>
+        </div>
+
 
     </main>
 

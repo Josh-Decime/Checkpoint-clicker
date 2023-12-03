@@ -2,14 +2,14 @@ console.log('its clicking time!')
 
 let clickUpgrades = [
     {
-        name: 'Scythe',
+        name: 'Tools',
         price: 5,
         quantity: 0,
         multiplier: 1,
         unlocked: false
     },
     {
-        name: 'Soul Net',
+        name: 'Workbench',
         price: 20,
         quantity: 0,
         multiplier: 5,
@@ -20,14 +20,14 @@ let clickUpgrades = [
 
 let automaticUpgrades = [
     {
-        name: 'Reaper',
+        name: 'Young Elf',
         price: 100,
         quantity: 0,
         multiplier: 1,
         unlocked: false
     },
     {
-        name: 'Soul Sucker',
+        name: 'Papa Elf',
         price: 250,
         quantity: 0,
         multiplier: 3,
@@ -35,48 +35,48 @@ let automaticUpgrades = [
     },
 ]
 
-let souls = 0
+let presents = 0
 let clickPower = 1
 
 
 function mine() {
-    souls += clickPower
-    console.log(souls)
+    presents += clickPower
+    console.log(presents)
 
-    updateSouls()
+    updatePresents()
 }
 
-function updateSouls() {
-    let soulElm = document.getElementById('souls')
-    soulElm.innerHTML = souls.toString()
+function updatePresents() {
+    let giftElm = document.getElementById('presents')
+    giftElm.innerHTML = presents.toString()
 }
 
 function buyClickUpgrade(upgradeName) {
     let upgrade = clickUpgrades.find(item => item.name == upgradeName)
     console.log(upgradeName, '|', upgrade)
-    if (souls >= upgrade.price) {
+    if (presents >= upgrade.price) {
         console.log('purchased')
-        souls -= upgrade.price
-        console.log('new souls count:', souls)
+        presents -= upgrade.price
+        console.log('new presents count:', presents)
         upgrade.quantity++
         console.log('power-up count:', upgrade.quantity)
         // console.log(upgrade, 'upgrade we are purchasing')
         clickPower += upgrade.multiplier
         // console.log(clickPower, 'clickPower')
 
-        updateSouls()
+        updatePresents()
     }
 }
 
 function buyAutomaticUpgrades(upgradeName) {
     let upgrade = automaticUpgrades.find(item => item.name == upgradeName)
     console.log(upgradeName, '|', upgrade)
-    if (souls >= upgrade.price) {
-        souls -= upgrade.price
+    if (presents >= upgrade.price) {
+        presents -= upgrade.price
         upgrade.quantity++
         console.log('Auto Upgrade amount', upgrade.quantity)
 
-        updateSouls()
+        updatePresents()
     }
 }
 
@@ -84,10 +84,10 @@ function automaticIncrease() {
     automaticUpgrades.forEach(upgrade => {
         if (upgrade.quantity > 0) {
             let autoGains = upgrade.quantity * upgrade.multiplier
-            souls += autoGains
-            // console.log('upgrade', upgrade, '|', 'autoGains', autoGains, '|', 'souls', souls)
+            presents += autoGains
+            // console.log('upgrade', upgrade, '|', 'autoGains', autoGains, '|', 'presents', presents)
 
-            updateSouls()
+            updatePresents()
         }
     })
 }
@@ -119,6 +119,6 @@ let autoInterval = setInterval(automaticIncrease, 1000)
 // clickUpgrades.forEach(upgrade => {
 //     if (upgrade.quantity > 0) {
 //         let upgradePower = upgrade.multiplier * upgrade.quantity
-//         souls += upgradePower
+//         presents += upgradePower
 //     }
 // })
