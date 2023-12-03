@@ -18,7 +18,7 @@
     <header class="container-fluid">
         <section class="row">
             <section class="col-12 ">
-                <h3 class="text-center christmas-style">Save Christmas</h3>
+                <h3 class="text-center christmas-style">Santa's Workshop Manager</h3>
             </section>
         </section>
 
@@ -32,9 +32,15 @@
                 </section>
             </section>
 
-            <section class="row">
-                <section class="d-flex justify-content-center">
+            <section class="row justify-content-center">
+                <section class="col-2">
+                    <p class="christmas-style p-2">Presents Per Click: <span id="Click Power">1</span> </p>
+                </section>
+                <section class="col-4">
                     <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
+                </section>
+                <section class="col-2">
+                    <p class="christmas-style p-2">Presents Per Second: <span id="Auto Power">0</span> </p>
                 </section>
             </section>
 
@@ -47,29 +53,44 @@
                                     <h3 class="mb-2">Click Upgrades</h3>
                                     <div class="d-flex">
                                         <button class="christmas-buttons mx-2" onclick="buyClickUpgrade('Tools')"
-                                            id="Upgrade Price">5</button>
+                                            id="Tools">5</button>
                                         <div class="ms-1">
-                                            <p>Tools</p>
-                                            <p>+1</p>
+                                            <p>Upgrade your tools</p>
+                                            <p>+1 present per click</p>
                                         </div>
                                     </div>
 
                                     <div class="d-flex">
-                                        <button class="christmas-buttons mx-2"
-                                            onclick="buyClickUpgrade('Workbench')">Workbench</button>
+                                        <button class="christmas-buttons mx-2" onclick="buyClickUpgrade('Workbench')"
+                                            id="Workbench">20</button>
                                         <div class="ms-1">
-                                            <p>Workbench</p>
-                                            <p>+1</p>
+                                            <p>Upgrade the Workbench</p>
+                                            <p>+5 presents per click</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <h3>Auto Upgrades</h3>
-                                    <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Young Elf')">Young
-                                        Elf</button>
-                                    <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Papa Elf')">Papa
-                                        Elf</button>
+                                    <h3 class="mb-2">Auto Upgrades</h3>
+                                    <div class="d-flex">
+                                        <button class="christmas-buttons"
+                                            onclick="buyAutomaticUpgrades('Young Elf')">Young
+                                            Elf</button>
+                                        <div class="ms-1">
+                                            <p>Hire a Young Elf</p>
+                                            <p>+1 Present Per Second</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex">
+                                        <button class="christmas-buttons"
+                                            onclick="buyAutomaticUpgrades('Papa Elf')">Papa
+                                            Elf</button>
+                                        <div class="ms-1">
+                                            <p>Hire Papa Elf</p>
+                                            <p>+3 Presents Per Second</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>

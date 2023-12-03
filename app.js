@@ -37,7 +37,8 @@ let automaticUpgrades = [
 
 let presents = 0
 let clickPower = 1
-let toolsPrice = 0
+let autoPower = 0
+let upgradeNewPrice = 0
 
 
 function mine() {
@@ -51,6 +52,18 @@ function updatePresents() {
     let giftElm = document.getElementById('presents')
     giftElm.innerHTML = presents.toString()
 }
+
+function drawClickPower() {
+    let clickElm = document.getElementById('Click Power')
+    clickElm.innerHTML = clickPower.toString()
+}
+
+function drawAutoPower() {
+
+    let autoElm = document.getElementById('Auto Power')
+    autoElm.innerHTML = autoPower.toString()
+}
+
 
 // would update all prices, i need a for each loop
 // function updateUpgradePrice() {
@@ -66,6 +79,19 @@ function updatePresents() {
 //     })
 // }
 
+// lol i was way over complicating it... i need to FIND the upgrade and display it
+function drawUpgradePrice(upgradeName) {
+
+    let clickUpgrade = clickUpgrades.find(upgrade => upgrade.name == upgradeName)
+    console.log('finding tools', clickUpgrade)
+    console.log('price', clickUpgrade.price)
+    let upgradeElm = document.getElementById(upgradeName)
+    upgradeElm.innerHTML = clickUpgrade.price.toString()
+    // uuugh why are you saying cant set property of null??? It literally is console logging price in the line right above it!! 
+    // figured it out, there was an issue with the HTML. when i was calling it I had '' around Tools.. so it said 'Tools'
+}
+
+
 function buyClickUpgrade(upgradeName) {
     let upgrade = clickUpgrades.find(item => item.name == upgradeName)
     console.log(upgradeName, '|', upgrade)
@@ -79,10 +105,13 @@ function buyClickUpgrade(upgradeName) {
         clickPower += upgrade.multiplier
         // console.log(clickPower, 'clickPower')
         upgrade.price = Math.round(upgrade.price * 1.5)
+        // ANCHOR this is an attempt to update upgrade cost, it can probably be commented out
         upgradeNewPrice = upgrade.price
         console.log('upgrade price:', upgrade)
 
         updatePresents()
+        drawClickPower()
+        drawUpgradePrice(upgradeName)
         // updateUpgradePrice()
     }
 }
@@ -95,7 +124,14 @@ function buyAutomaticUpgrades(upgradeName) {
         upgrade.quantity++
         console.log('Auto Upgrade amount', upgrade.quantity)
 
+        autoPower += upgrade.multiplier
+        console.log('auto power', autoPower)
+        upgrade.price = Math.round(upgrade.price * 1.5)
+        console.log('upgrade price', upgrade)
+
+
         updatePresents()
+        drawAutoPower()
     }
 }
 
