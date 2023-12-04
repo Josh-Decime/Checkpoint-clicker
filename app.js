@@ -234,6 +234,31 @@ let autoInterval = setInterval(automaticIncrease, 1000)
 
 
 
+let countdownTime = 12 * 60 * 1000;
+
+function updateTimer() {
+    countdownTime -= 1000
+
+    let minutes = Math.floor(countdownTime / (1000 * 60))
+    let seconds = Math.floor((countdownTime % (1000 * 60)) / 1000)
+
+    document.getElementById('timer').innerHTML = `${minutes}m ${seconds}s`
+
+    // if (countdownTime <= 0 && presents != 100000) {
+    //     alert('Christmas is Ruined')
+    // } else {
+    //     alert('You saved Christmas')
+    // }
+}
+
+
+setInterval(updateTimer, 1000)
+
+
+updateTimer();
+
+
+
 // function clickValue() {
 // we want to increase clickPower by the multiplier * quantity forEach clickUpgrades
 
