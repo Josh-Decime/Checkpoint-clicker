@@ -233,8 +233,11 @@ function automaticIncrease() {
 let autoInterval = setInterval(automaticIncrease, 1000)
 
 
+// test timer
+// let countdownTime = 1 * 10 * 1000
 
-let countdownTime = 12 * 60 * 1000;
+// ANCHOR this is the actual countdown timer
+let countdownTime = 12 * 60 * 1000
 
 function updateTimer() {
     countdownTime -= 1000
@@ -244,18 +247,20 @@ function updateTimer() {
 
     document.getElementById('timer').innerHTML = `${minutes}m ${seconds}s`
 
-    // if (countdownTime <= 0 && presents != 100000) {
-    //     alert('Christmas is Ruined')
-    // } else {
-    //     alert('You saved Christmas')
-    // }
+    // ANCHOR haven't figured out how to make this work yet
+    if (countdownTime <= 0 && presents < 100000) {
+        alert('Christmas is Ruined!')
+    }
+    if (countdownTime <= 0 && presents > 100000) {
+        alert('You saved christmas!')
+    }
 }
 
 
 setInterval(updateTimer, 1000)
 
 
-updateTimer();
+updateTimer()
 
 
 
