@@ -131,6 +131,37 @@ function drawWorkshopQuantity() {
     workshopQuantityElm.innerHTML = clickUpgrades[1].quantity.toString()
 }
 
+function drawYoungElfQuantity() {
+    let youngElfQuantityElm = document.getElementById('youngElfQuantity')
+    youngElfQuantityElm.innerHTML = automaticUpgrades[0].quantity.toString()
+}
+
+function drawPapaElfQuantity() {
+    let papaElfQuantityElm = document.getElementById('papaElfQuantity')
+    papaElfQuantityElm.innerHTML = automaticUpgrades[1].quantity.toString()
+}
+
+function drawToolMultiplier() {
+    let toolMultiplierElm = document.getElementById('toolMultiplier')
+    toolMultiplierElm.innerHTML = (clickUpgrades[0].quantity * clickUpgrades[0].multiplier).toString()
+}
+
+
+function drawWorkshopMultiplier() {
+    let workshopMultiplierElm = document.getElementById('workshopMultiplier')
+    workshopMultiplierElm.innerHTML = (clickUpgrades[1].quantity * clickUpgrades[1].multiplier).toString()
+}
+
+function drawYoungElfMultiplier() {
+    let youngElfMultiplierElm = document.getElementById('youngElfMultiplier')
+    youngElfMultiplierElm.innerHTML = (automaticUpgrades[0].quantity * automaticUpgrades[0].multiplier).toString()
+}
+
+function drawPapaElfMultiplier() {
+    let papaElfMultiplierElm = document.getElementById('papaElfMultiplier')
+    papaElfMultiplierElm.innerHTML = (automaticUpgrades[1].quantity * automaticUpgrades[1].multiplier).toString()
+}
+
 
 function buyClickUpgrade(upgradeName) {
     let upgrade = clickUpgrades.find(item => item.name == upgradeName)
@@ -157,6 +188,8 @@ function buyClickUpgrade(upgradeName) {
         // drawClickStatQuantity(upgradeName)
         drawToolQuantity()
         drawWorkshopQuantity()
+        drawToolMultiplier()
+        drawWorkshopMultiplier()
     }
 }
 
@@ -177,6 +210,11 @@ function buyAutomaticUpgrades(upgradeName) {
         updatePresents()
         drawAutoPower()
         drawAutoUpgradePrice(upgradeName)
+
+        drawYoungElfQuantity()
+        drawPapaElfQuantity()
+        drawYoungElfMultiplier()
+        drawPapaElfMultiplier()
     }
 }
 
