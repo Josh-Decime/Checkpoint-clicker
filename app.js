@@ -80,15 +80,23 @@ function drawAutoPower() {
 // }
 
 // lol i was way over complicating it... i need to FIND the upgrade and display it
-function drawUpgradePrice(upgradeName) {
+function drawClickUpgradePrice(upgradeName) {
 
     let clickUpgrade = clickUpgrades.find(upgrade => upgrade.name == upgradeName)
-    console.log('finding tools', clickUpgrade)
+    console.log('finding upgrade', clickUpgrade)
     console.log('price', clickUpgrade.price)
     let upgradeElm = document.getElementById(upgradeName)
     upgradeElm.innerHTML = clickUpgrade.price.toString()
     // uuugh why are you saying cant set property of null??? It literally is console logging price in the line right above it!! 
     // figured it out, there was an issue with the HTML. when i was calling it I had '' around Tools.. so it said 'Tools'
+}
+
+function drawAutoUpgradePrice(upgradeName) {
+    let autoUpgrade = automaticUpgrades.find(upgrade => upgrade.name == upgradeName)
+    console.log('finding upgrade', autoUpgrade)
+    console.log('Price', autoUpgrade.price)
+    let upgradeElm = document.getElementById(upgradeName)
+    upgradeElm.innerHTML = autoUpgrade.price.toString()
 }
 
 
@@ -111,7 +119,7 @@ function buyClickUpgrade(upgradeName) {
 
         updatePresents()
         drawClickPower()
-        drawUpgradePrice(upgradeName)
+        drawClickUpgradePrice(upgradeName)
         // updateUpgradePrice()
     }
 }
@@ -132,6 +140,7 @@ function buyAutomaticUpgrades(upgradeName) {
 
         updatePresents()
         drawAutoPower()
+        drawAutoUpgradePrice(upgradeName)
     }
 }
 
