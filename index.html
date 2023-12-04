@@ -33,14 +33,15 @@
             </section>
 
             <section class="row justify-content-center">
-                <section class="col-2">
-                    <p class="christmas-style p-2">Presents Per Click: <span id="Click Power">1</span> </p>
+                <section class="col-2 col-md-2">
+                    <p class="presents-display p-2 px-3 fs-5 mdi mdi-gesture-tap"> <span id="Click Power">1</span> </p>
                 </section>
-                <section class="col-4">
-                    <p class="christmas-style p-2">Your Presents: <span id="presents">0</span> </p>
+                <section class="col-5 col-md-4">
+                    <p class="presents-display p-2 px-3 fs-5 mdi mdi-gift"> <span id="presents">0</span>
+                    </p>
                 </section>
-                <section class="col-2">
-                    <p class="christmas-style p-2">Presents Per Second: <span id="Auto Power">0</span> </p>
+                <section class="col-2 col-md-2">
+                    <p class="presents-display p-2 px-3 fs-5 mdi mdi-timer-outline"> <span id="Auto Power">0</span> </p>
                 </section>
             </section>
 
@@ -52,20 +53,20 @@
                                 <div class="col-12 col-md-6">
                                     <h3 class="mb-2">Click Upgrades</h3>
                                     <div class="d-flex">
-                                        <button class="christmas-buttons mx-2" onclick="buyClickUpgrade('Tools')"
-                                            id="Tools">5</button>
+                                        <button class="christmas-buttons mx-2 mdi mdi-gift"
+                                            onclick="buyClickUpgrade('Tools')" id="Tools">5</button>
                                         <div class="ms-1">
-                                            <p>Upgrade your tools</p>
-                                            <p>+1 present per click</p>
+                                            <p><b>Tools</b></p>
+                                            <p class="mdi mdi-gesture-tap">+1</p>
                                         </div>
                                     </div>
 
                                     <div class="d-flex">
-                                        <button class="christmas-buttons mx-2" onclick="buyClickUpgrade('Workbench')"
-                                            id="Workbench">20</button>
+                                        <button class="christmas-buttons mx-2 mdi mdi-gift"
+                                            onclick="buyClickUpgrade('Workbench')" id="Workbench">20</button>
                                         <div class="ms-1">
-                                            <p>Upgrade the Workbench</p>
-                                            <p>+5 presents per click</p>
+                                            <p><b>Workbench</b></p>
+                                            <p class="mdi mdi-gesture-tap">+5</p>
                                         </div>
                                     </div>
                                 </div>
@@ -73,20 +74,20 @@
                                 <div class="col-12 col-md-6">
                                     <h3 class="mb-2">Auto Upgrades</h3>
                                     <div class="d-flex">
-                                        <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Young Elf')"
-                                            id="Young Elf">100</button>
+                                        <button class="christmas-buttons mdi mdi-gift"
+                                            onclick="buyAutomaticUpgrades('Young Elf')" id="Young Elf">100</button>
                                         <div class="ms-1">
-                                            <p>Hire a Young Elf</p>
-                                            <p>+1 Present Per Second</p>
+                                            <p><b>Young Elf</b></p>
+                                            <p class="mdi mdi-timer-outline">+1</p>
                                         </div>
                                     </div>
 
                                     <div class="d-flex">
-                                        <button class="christmas-buttons" onclick="buyAutomaticUpgrades('Papa Elf')"
-                                            id="Papa Elf">250</button>
+                                        <button class="christmas-buttons mdi mdi-gift"
+                                            onclick="buyAutomaticUpgrades('Papa Elf')" id="Papa Elf">250</button>
                                         <div class="ms-1">
-                                            <p>Hire Papa Elf</p>
-                                            <p>+3 Presents Per Second</p>
+                                            <p><b>Papa Elf</b></p>
+                                            <p class="mdi mdi-timer-outline">+3</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,11 +100,38 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <h3>click stats</h3>
+                                    <div class="d-flex justify-content-around fs-4">
+                                        <p class="stat-container" id="toolQuantityID">0</p>
+                                        <p>Tools</p>
+                                        <p class="mdi mdi-gesture-tap"></p>
+                                        <p class="stat-container">Multiplier</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around fs-4">
+                                        <p class="stat-container">Quantity</p>
+                                        <p>Tools</p>
+                                        <p class="mdi mdi-gesture-tap"></p>
+                                        <p class="stat-container">Multiplier</p>
+                                    </div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
                                     <h3>Auto stats</h3>
+                                    <div class="d-flex justify-content-around fs-4">
+                                        <p class="stat-container">Quantity</p>
+                                        <p>Young Elf</p>
+                                        <p class="mdi mdi-timer-outline"></p>
+                                        <p class="stat-container">Multiplier</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around fs-4">
+                                        <p class="stat-container">Quantity</p>
+                                        <p>Papa Elf</p>
+                                        <p class="mdi mdi-timer-outline"></p>
+                                        <p class="stat-container">Multiplier</p>
+                                    </div>
                                 </div>
+
 
                             </div>
 

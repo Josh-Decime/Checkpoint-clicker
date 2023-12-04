@@ -7,6 +7,7 @@ let clickUpgrades = [
         quantity: 0,
         multiplier: 1,
         unlocked: false,
+        statQuantityID: 'toolQuantityID'
     },
     {
         name: 'Workbench',
@@ -38,7 +39,7 @@ let automaticUpgrades = [
 let presents = 0
 let clickPower = 1
 let autoPower = 0
-let upgradeNewPrice = 0
+// let upgradeNewPrice = 0
 
 
 function mine() {
@@ -99,6 +100,14 @@ function drawAutoUpgradePrice(upgradeName) {
     upgradeElm.innerHTML = autoUpgrade.price.toString()
 }
 
+function drawClickStatQuantity(upgradeName) {
+    let clickUpgrade = clickUpgrades.find(upgrade => upgrade.statQuantityID == upgradeName)
+    console.log('finding upgrades stat', clickUpgrade)
+    console.log('quantity', clickUpgrade.quantity)
+    let upgradeElm = document.getElementById(upgradeName)
+    upgradeElm.innerHTML = clickUpgrade.quantity.toString()
+}
+
 
 function buyClickUpgrade(upgradeName) {
     let upgrade = clickUpgrades.find(item => item.name == upgradeName)
@@ -114,13 +123,15 @@ function buyClickUpgrade(upgradeName) {
         // console.log(clickPower, 'clickPower')
         upgrade.price = Math.round(upgrade.price * 1.5)
         // ANCHOR this is an attempt to update upgrade cost, it can probably be commented out
-        upgradeNewPrice = upgrade.price
+        // upgradeNewPrice = upgrade.price
         console.log('upgrade price:', upgrade)
 
         updatePresents()
         drawClickPower()
         drawClickUpgradePrice(upgradeName)
         // updateUpgradePrice()
+
+        drawClickStatQuantity(upgradeName)
     }
 }
 
