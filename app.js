@@ -7,7 +7,9 @@ let clickUpgrades = [
         quantity: 0,
         multiplier: 1,
         unlocked: false,
-        statQuantityID: 'toolQuantityID'
+        // quantityStatID: 'toolQuantity',
+        // details: 'hammer',
+        // nameTwo: 'please',
     },
     {
         name: 'Workbench',
@@ -65,6 +67,11 @@ function drawAutoPower() {
     autoElm.innerHTML = autoPower.toString()
 }
 
+// function drawToolQuantity() {
+//     let toolElm = document.getElementById('toolQuantity')
+//     toolElm.innerHTML = clickUpgrades.quantity
+// }
+
 
 // would update all prices, i need a for each loop
 // function updateUpgradePrice() {
@@ -92,6 +99,11 @@ function drawClickUpgradePrice(upgradeName) {
     // figured it out, there was an issue with the HTML. when i was calling it I had '' around Tools.. so it said 'Tools'
 }
 
+// function drawClickQuantity(UpgradeId) {
+//     let clickUpgrade = clickUpgrades.find(Upgrade => Upgrade.Details == UpgradeId)
+//     console.log('find ID', clickUpgrade)
+// }
+
 function drawAutoUpgradePrice(upgradeName) {
     let autoUpgrade = automaticUpgrades.find(upgrade => upgrade.name == upgradeName)
     console.log('finding upgrade', autoUpgrade)
@@ -100,12 +112,23 @@ function drawAutoUpgradePrice(upgradeName) {
     upgradeElm.innerHTML = autoUpgrade.price.toString()
 }
 
-function drawClickStatQuantity(upgradeName) {
-    let clickUpgrade = clickUpgrades.find(upgrade => upgrade.statQuantityID == upgradeName)
-    console.log('finding upgrades stat', clickUpgrade)
-    console.log('quantity', clickUpgrade.quantity)
-    let upgradeElm = document.getElementById(upgradeName)
-    upgradeElm.innerHTML = clickUpgrade.quantity.toString()
+// doesnt work & I am not sure why.. i checked for typos in function, array & HTML. even changed names & updated them all a couple times
+// function drawClickStatQuantity(quantityStatID) {
+//     let clickUpgradeStat = clickUpgrades.find(upgrade => upgrade.statQuantityID == quantityStatID)
+//     console.log('finding upgrades stat', clickUpgradeStat)
+//     console.log('quantity', clickUpgradeStat.quantity)
+//     let upgradeElm = document.getElementById(quantityStatID)
+//     upgradeElm.innerHTML = clickUpgradeStat.quantity.toString()
+// }
+
+function drawToolQuantity() {
+    let toolQuantityElm = document.getElementById('toolQuantity')
+    toolQuantityElm.innerHTML = clickUpgrades[0].quantity.toString()
+}
+
+function drawWorkshopQuantity() {
+    let workshopQuantityElm = document.getElementById('workshopQuantity')
+    workshopQuantityElm.innerHTML = clickUpgrades[1].quantity.toString()
 }
 
 
@@ -131,7 +154,9 @@ function buyClickUpgrade(upgradeName) {
         drawClickUpgradePrice(upgradeName)
         // updateUpgradePrice()
 
-        drawClickStatQuantity(upgradeName)
+        // drawClickStatQuantity(upgradeName)
+        drawToolQuantity()
+        drawWorkshopQuantity()
     }
 }
 
