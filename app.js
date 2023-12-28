@@ -168,7 +168,7 @@ function buyAutomaticUpgrades(upgradeName) {
 
         autoPower += upgrade.multiplier
         console.log('auto power', autoPower)
-        upgrade.price = Math.round(upgrade.price * 1.5)
+        upgrade.price = Math.round(upgrade.price * 1.2)
         console.log('upgrade price', upgrade)
 
 
@@ -201,7 +201,7 @@ let autoInterval = setInterval(automaticIncrease, 1000)
 // test timer
 // let countdownTime = 1 * 10 * 1000
 
-let countdownTime = 12 * 60 * 1000
+let countdownTime = 6 * 60 * 1000
 
 function updateTimer() {
     countdownTime -= 1000
@@ -211,10 +211,10 @@ function updateTimer() {
 
     document.getElementById('timer').innerHTML = `${minutes}m ${seconds}s`
 
-    if (countdownTime == 0 && presents < 100000) {
+    if (countdownTime == 0 && presents < 50000) {
         alert('Christmas is Ruined!')
     }
-    if (countdownTime == 0 && presents > 100000) {
+    if (countdownTime == 0 && presents > 50000) {
         alert('You saved christmas!')
     }
 }
