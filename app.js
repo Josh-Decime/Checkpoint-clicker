@@ -188,7 +188,7 @@ function automaticIncrease() {
         if (upgrade.quantity > 0) {
             let autoGains = upgrade.quantity * upgrade.multiplier
             presents += autoGains
-            console.log('upgrade', upgrade, '|', 'autoGains', autoGains, '|', 'presents', presents)
+            // console.log('upgrade', upgrade, '|', 'autoGains', autoGains, '|', 'presents', presents)
 
             updatePresents()
         }
@@ -211,10 +211,10 @@ function updateTimer() {
 
     document.getElementById('timer').innerHTML = `${minutes}m ${seconds}s`
 
-    if (countdownTime <= 0 && presents < 100000) {
+    if (countdownTime == 0 && presents < 100000) {
         alert('Christmas is Ruined!')
     }
-    if (countdownTime <= 0 && presents > 100000) {
+    if (countdownTime == 0 && presents > 100000) {
         alert('You saved christmas!')
     }
 }
